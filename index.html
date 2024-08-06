@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: sans-serif;
+            color: #007e32;
+            background-color: #ffffff;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        let url = "mc.zake2002.xyz:2114";
+        $(document).ready(() => {
+            $.getJSON("https://api.mcsrvstat.us/1/" + url, (status) => {
+                if (status.debug.ping) {
+                    $("#status").append("Online!");
+                    $("#players_num").append("(" + status.players.online + "/" + status.players.max + ")");
+                } else {
+                    $("#status").append("Offine");
+                    $("#players_num").hide();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Hi, I'm Zake2002. Welcome to my website!</h2>
+    <p>I don't really have a lot to show you, but I can share a few things</p>
+    <p><b>About me:</b>
+        <br>- Google Docs: <a href="https://docs.google.com/document/d/1--P3kiiyvoSVjgR4wsBd_PC5-HFcFNoEPVO9AkMw-Ss/edit?usp=sharing">[CORE/Zake2002]: /load info</a></p>
+    <p><b>My Minecraft server:</b>
+        <br>- Status: <span id="status"></span> <span id="players_num"></span>
+        <br>- Version: Java 1.20.4 (Joinable 1.21.0-1.20.4 + Bedrock Bridge)
+        <br>- Address: mc.zake2002.xyz
+        <br>- Bedrock Port: 2114 (Not needed in Java)</p>
+    <p><b>Other links:</b>
+        <br>- Discord: <a href="https://discord.gg/CjH2ZDM5Dt">[ Zake2002's Digital Hub ]</a>
+        <br>- PayPal: <a href="https://paypal.me/zake2002v2">@zake2002v2</a> (You really don't have to)
+        <br>- YouTube: <a href="https://youtube.com/zake2002">Zake2002</a></p>
+</body>
+</html>
