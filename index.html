@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[ Zake2002's Digital Hub ]</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f7f7f7;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #007e32;
+            font-size: 1.69rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .p-list {
+            margin-top: 0;
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .p-list ul {
+            padding-left: 1rem;
+            font-style: italic;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #003366;
+        }
+
+        #status {
+            font-weight: bold;
+            color: #007e32;
+        }
+
+        #status.offline {
+            color: #cc0000;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1em; /* Match regular text size */
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            const mcurl = "mc.zake2002.xyz:19132";
+            $.getJSON("https://api.mcsrvstat.us/1/" + mcurl, (status) => {
+                if (status.debug.ping) {
+                    $("#status").text("Online!").removeClass("offline");
+                    $("#players_num").text(`(${status.players.online}/${status.players.max})`);
+                } else {
+                    $("#status").text("Offline").addClass("offline");
+                    $("#players_num").hide();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Hi, I'm Zake2002. Welcome to my website!</h1>
+        <p>I don't really have a lot to show you, but I can share a few things.</p>
+
+        <section>
+            <h2>About me</h2>
+            <ul class="p-list">
+                <li>Google Docs: <a href="https://docs.google.com/document/d/1--P3kiiyvoSVjgR4wsBd_PC5-HFcFNoEPVO9AkMw-Ss/edit?usp=sharing">[CORE/Zake2002]: /load info</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>My Minecraft server</h2>
+            <ul class="p-list">
+                <li>Status: <span id="status">Pinging...</span> <span id="players_num"></span></li>
+                <li>Version: Paper 1.21.1</li>
+                <li><ul><li>Joinable on Java 1.21.2-1.9.0 + Bedrock Bridge</li></ul></li>
+                <li>Address: <code>mc.zake2002.xyz</code></li>
+                <li>Bedrock Port: Default <code>19132</code></li>
+                <li><ul><li>For Bedrock users, not needed in Java</li></ul></li>
+            </p>
+        </section>
+
+        <section>
+            <h2>Other links</h2>
+            <ul class="p-list">
+                <li>Discord: <a href="https://discord.gg/CjH2ZDM5Dt">[ Zake2002's Digital Hub ]</a></li>
+                <li>PayPal: <a href="https://paypal.me/zake2002v2">@zake2002v2</a> (You really don't have to)</li>
+                <li>YouTube: <a href="https://youtube.com/zake2002">Zake2002</a></li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
