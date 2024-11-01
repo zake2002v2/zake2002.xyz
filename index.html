@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -9,12 +9,48 @@
             box-sizing: border-box;
         }
 
+        /* General body styling */
         body {
             font-family: 'Arial', sans-serif;
             color: #333;
             background-color: #f7f7f7;
             line-height: 1.6;
             padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Main container flex layout for two columns */
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 1220px;
+            gap: 20px;
+        }
+
+        /* Switch to two columns on larger screens */
+        @media (min-width: 1000px) {
+            .main-container {
+                flex-direction: row;
+                gap: 20px;
+            }
+        }
+
+        /* Independent column styling */
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Space between containers in each column */
+            flex: 1; /* Makes each column take up equal width */
+        }
+
+        /* Styling for each content section */
+        .container {
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
@@ -28,19 +64,14 @@
             margin-bottom: 0.5rem;
         }
 
-        .p-list {
-            margin-top: 0;
-            list-style: none;
-            padding-left: 1rem;
-        }
-
+        /* List and link styling */
         .p-list ul {
             padding-left: 1rem;
             font-style: italic;
         }
 
         a {
-            color: #0066cc;
+            color: #1e90ff;
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -49,6 +80,7 @@
             color: #003366;
         }
 
+        /* Server status styling */
         #status {
             font-weight: bold;
             color: #007e32;
@@ -58,18 +90,10 @@
             color: #cc0000;
         }
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 15px 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
+        /* Code block styling */
         code {
             font-family: 'Courier New', Courier, monospace;
-            font-size: 1em; /* Match regular text size */
+            font-size: 1em;
             background-color: #f0f0f0;
             padding: 2px 4px;
             border-radius: 3px;
@@ -92,37 +116,52 @@
     </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Hi, I'm Zake2002. Welcome to my website!</h1>
-        <p>I don't really have a lot to show you, but I can share a few things.</p>
+    <!-- Main container for independent columns -->
+    <div class="main-container">
+        
+        <!-- Left Column -->
+        <div class="column">
+            <!-- Welcome message container -->
+            <div class="container">
+                <h1>Hi, I'm Zake2002. Welcome to my website!</h1>
+                <p>I don't really have a lot to show you, but I can share a few things.</p>
+            </div>
 
-        <section>
-            <h2>About me</h2>
-            <ul class="p-list">
-                <li>Google Docs: <a href="https://docs.google.com/document/d/1--P3kiiyvoSVjgR4wsBd_PC5-HFcFNoEPVO9AkMw-Ss/edit?usp=sharing">[CORE/Zake2002]: /load info</a></li>
-            </ul>
-        </section>
+            <!-- Minecraft server section container -->
+            <div class="container">
+                <h2>My <span style="color: #007e32;">Minecraft</span> server</h2>
+                <ul class="p-list">
+                    Status: <span id="status"><span style="font-weight: normal; color: #d49e0b;">Pinging...</span></span> <span id="players_num"></span><br>
+                    Version: <a href="https://papermc.io/">Paper 1.21.1</a><br>
+                    <ul><li>Joinable on Java 1.21.2-1.9.0 + Bedrock Bridge</li></ul>
+                    Address: <code>mc.zake2002.xyz</code><br>
+                    Bedrock Port: Default <code>19132</code><br>
+                    <ul><li>For Bedrock users, not needed in Java</li></ul>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Right Column -->
+        <div class="column">
+            <!-- About me section container -->
+            <div class="container">
+                <h2>About me</h2>
+                <ul class="p-list">
+                    <li>Google Docs: <a href="https://docs.google.com/document/d/1--P3kiiyvoSVjgR4wsBd_PC5-HFcFNoEPVO9AkMw-Ss/edit?usp=sharing">[CORE/Zake2002]: /load info</a></li>
+                </ul>
+            </div>
 
-        <section>
-            <h2>My Minecraft server</h2>
-            <ul class="p-list">
-                <li>Status: <span id="status"><span style="font-weight: normal; color: #d49e0b;">Pinging...</span></span> <span id="players_num"></span></li>
-                <li>Version: Paper 1.21.1</li>
-                <li><ul><li>Joinable on Java 1.21.3-1.9.0 + Bedrock Bridge</li></ul></li>
-                <li>Address: <code>mc.zake2002.xyz</code></li>
-                <li>Bedrock Port: Default <code>19132</code></li>
-                <li><ul><li>For Bedrock users, not needed in Java</li></ul></li>
-            </p>
-        </section>
+            <!-- Other links section container -->
+            <div class="container">
+                <h2>Other links</h2>
+                <ul class="p-list">
+                    <li>Discord: <a href="https://discord.gg/CjH2ZDM5Dt">[ Zake2002's Digital Hub ]</a></li>
+                    <li>PayPal: <a href="https://paypal.me/zake2002v2">@zake2002v2</a> (You really don't have to)</li>
+                    <li>YouTube: <a href="https://youtube.com/zake2002">Zake2002</a></li>
+                </ul>
+            </div>
+        </div>
 
-        <section>
-            <h2>Other links</h2>
-            <ul class="p-list">
-                <li>Discord: <a href="https://discord.gg/CjH2ZDM5Dt">[ Zake2002's Digital Hub ]</a></li>
-                <li>PayPal: <a href="https://paypal.me/zake2002v2">@zake2002v2</a> (You really don't have to)</li>
-                <li>YouTube: <a href="https://youtube.com/zake2002">Zake2002</a></li>
-            </ul>
-        </section>
     </div>
 </body>
 </html>
