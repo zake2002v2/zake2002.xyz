@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+}
+
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f7f7f7;
+    line-height: 1.6;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Main container flex layout for two columns */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1220px;
+    gap: 20px;
+}
+
+/* Switch to two columns on larger screens */
+@media (min-width: 1000px) {
+    .main-container {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+/* Independent column styling */
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between containers in each column */
+    flex: 1; /* Makes each column take up equal width */
+}
+
+/* Styling for each content section */
+.container {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #007e32;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 0.5rem;
+}
+
+ul {
+    padding-left: 1rem;
+}
+
+/* List and link styling */
+.p-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.green {
+    color: #007e32;
+}
+
+.green-bright {
+    color: #00ff64;
+}
+
+a {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #003366;
+}
+
+/* Server status styling */
+#status {
+    font-weight: normal;
+    color: #d49e0b;
+}
+#status.online {
+    font-weight: bold;
+    color: #007e32;
+}
+#status.offline {
+    color: #cc0000;
+}
+
+/* Code block styling */
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f0f0f0;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
