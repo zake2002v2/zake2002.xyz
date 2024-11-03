@@ -4,116 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[ Zake2002's Digital Hub ]</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        /* General body styling */
-        body {
-            font-family: 'Arial', sans-serif;
-            color: #333;
-            background-color: #f7f7f7;
-            line-height: 1.6;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* Main container flex layout for two columns */
-        .main-container {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            max-width: 1220px;
-            gap: 20px;
-        }
-
-        /* Switch to two columns on larger screens */
-        @media (min-width: 1000px) {
-            .main-container {
-                flex-direction: row;
-                gap: 20px;
-            }
-        }
-
-        /* Independent column styling */
-        .column {
-            display: flex;
-            flex-direction: column;
-            gap: 20px; /* Space between containers in each column */
-            flex: 1; /* Makes each column take up equal width */
-        }
-
-        /* Styling for each content section */
-        .container {
-            background: #ffffff;
-            padding: 20px 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            color: #007e32;
-            font-size: 1.69rem;
-            text-align: center;
-        }
-
-        h2 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* List and link styling */
-        .p-list ul {
-            padding-left: 1rem;
-            font-style: italic;
-        }
-
-        a {
-            color: #1e90ff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #003366;
-        }
-
-        /* Server status styling */
-        #status {
-            font-weight: bold;
-            color: #007e32;
-        }
-
-        #status.offline {
-            color: #cc0000;
-        }
-
-        /* Code block styling */
-        code {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 1em;
-            background-color: #f0f0f0;
-            padding: 2px 4px;
-            border-radius: 3px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(() => {
-            const mcurl = "mc.zake2002.xyz:19132";
-            $.getJSON("https://api.mcsrvstat.us/1/" + mcurl, (status) => {
-                if (status.debug.ping) {
-                    $("#status").text("Online!").removeClass("offline");
-                    $("#players_num").text(`(${status.players.online}/${status.players.max})`);
-                } else {
-                    $("#status").text("Offline").addClass("offline");
-                    $("#players_num").hide();
-                }
-            });
-        });
-    </script>
+    <script src="js/serverstatus.js"></script>
 </head>
 <body>
     <!-- Main container for independent columns -->
@@ -122,47 +15,51 @@
         <!-- Left Column -->
         <div class="column">
             <!-- Welcome message container -->
-            <div class="container">
-                <h1 style="text-align: center;">Hi, I'm Zake2002. Welcome to my website!</h1>
-                <p style="text-align: center;">I don't really have a lot to show you, but I can share a few things.</p>
-            </div>
+            <section class="container">
+                <h1>Hi, I'm Zake2002. Welcome to my website!</h1>
+                <p class="center-align">I don't really have a lot to show you, but I can share a few things.</p>
+            </section>
 
             <!-- About me section container -->
-            <div class="container">
-                <h2 style="text-align: center;">About me</h2>
-                <span style="font-weight: bold;">Google Docs: <a href="https://docs.google.com/document/d/1--P3kiiyvoSVjgR4wsBd_PC5-HFcFNoEPVO9AkMw-Ss/edit?usp=sharing"><code>[<span style="color: #00ff64;">CORE</span>/<span style="color:#007e32">Zake2002</span>]</code>: /load info</a></span>
-                <p class="p-list">
+            <section class="container">
+                <h2>About me</h2>
+                <p><strong>Google Docs: <a href="https://docs.google.com/document/d/1--P3kiiyvoSVjgR4wsBd_PC5-HFcFNoEPVO9AkMw-Ss/edit?usp=sharing"><code>[<span class="green-bright">CORE</span>/<span class="green">Zake2002</span>]</code>: /load info</a></strong></p>
+                <p>
                     Name's Zake (pronounced Zack-key/Zaki/Zackie)<br>
                     I'm a CORE user with energy powered abilities who gateways to multiple worlds and hangs out with friends enjoying games, roleplays, and even adventures too!<br>
                     Sometimes I can be a bit nervous or embarrassed in some cases, or I can get upset or even serious.<br>
                     If I see someone in a bad situation, if I can I will try to help them out.
                 </p>
-            </div>
+            </section>
         </div>
         <!-- Right Column -->
         <div class="column">
             <!-- Minecraft server section container -->
-            <div class="container">
-                <h2 style="text-align: center;">My <span style="color: #007e32;">Minecraft</span> server</h2>
-                <p style="text-align: center;" class="p-list">
-                    Status: <span id="status"><span style="font-weight: normal; color: #d49e0b;">Pinging...</span></span> <span id="players_num"></span><br>
-                    Version: <a href="https://papermc.io/">Paper 1.21.1</a><br>
-                    <span style="font-style: italic;">Joinable on Java 1.21.2-1.9.0 + Bedrock Bridge</span><br>
-                    Address: <code>mc.zake2002.xyz</code><br>
-                    Bedrock Port: Default <code>19132</code><br>
-                    <span style="font-style: italic;">For Bedrock users, not needed in Java</span>
-                </p>
-            </div>
+            <section class="container">
+                <h2>My <span class="green">Minecraft</span> server</h2>
+                <ul class="p-list center-align">
+                    <li>Status: <span id="status">Pinging...</span> <span id="players_num"></span></li>
+                    <li>
+                        Version: <a href="https://papermc.io/">Paper 1.21.1</a><br>
+                        <em>Joinable on Java 1.21.2-1.9.0 + Bedrock Bridge</em>
+                    </li>
+                    <li>Address: <code>mc.zake2002.xyz</code></li>
+                    <li>
+                        Bedrock Port: Default <code>19132</code><br>
+                        <em>For Bedrock users, not needed in Java</em>
+                    </li>
+                </ul>
+            </section>
             
             <!-- Other links section container -->
-            <div class="container">
-                <h2 style="text-align: center;">Other links</h2>
-                <p class="p-list">
+            <section class="container">
+                <h2>Other links</h2>
+                <ul>
                     <li>Discord: <a href="https://discord.gg/CjH2ZDM5Dt">[ Zake2002's Digital Hub ]</a></li>
                     <li>PayPal: <a href="https://paypal.me/zake2002v2">@zake2002v2</a> (You really don't have to)</li>
                     <li>YouTube: <a href="https://youtube.com/zake2002">Zake2002</a></li>
-                </p>
-            </div>
+                </ul>
+            </section>
         </div>
 
     </div>
