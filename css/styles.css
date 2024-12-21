@@ -140,6 +140,31 @@ a.discord:hover {
     color: #cc0000;
 }
 
+/* MC Network status styling */
+#network {
+    font-weight: normal;
+    color: #d49e0b;
+}
+#network.offline {
+    color: #cc0000;
+}
+/* Apparently this does not want to apply for some reason */
+#networkOffline {
+    color: #cc0000;
+}
+/* Or that too... Very well */
+a.MCnetwork {
+    font-weight: normal;
+    color: #d49e0b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a.MCnetwork:hover {
+    color: #003366;
+}
+/* Nope, it doesn't wanna color... How come #status can color fine but not this?
+If anyone out there can read this, please help */
+
 /* Code block styling */
 code {
     font-family: 'Courier New', Courier, monospace;

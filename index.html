@@ -6,7 +6,8 @@
     <title>[ Zake2002's Digital Hub ]</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/serverstatus.js"></script>
+    <script src="js/MCServerStatus.js"></script>
+    <script src="js/MCNetworkStatus.js"></script>
 </head>
 <body>
     <!-- Main container for independent columns -->
@@ -38,14 +39,18 @@
             <section class="container">
                 <h2>My <span class="green">Minecraft</span> server</h2>
                 <ul class="p-list center-align">
-                    <li>Status: <span id="status">Pinging...</span> <span id="players_num"></span></li>
+                    <li>Status: <span id="status">Pinging...</span> <span id="players_num"></span>
+                        <!-- styles.css apparently does not wanna work for #network, or even #networkOffline, so...  -->
+                        <a id="network" style="color: #d49e0b;" href="https://papermc.io/downloads/velocity"><span id="networkOffline" style="color: #cc0000;"></span></a></li>
+                        <!-- This will have to do I guess, unless there's another way to make it actually work -->
+                        <!-- If anyone out there can read this, please help -->
                     <li>
-                        Version: <a href="https://papermc.io/">Paper 1.21.3</a><br>
+                        Version: <a href="https://papermc.io/downloads/paper">Paper 1.21.3</a><br>
                         <em>Joinable on Java 1.21.4-1.9.0 + Bedrock Bridge</em>
                     </li>
                     <li>Address: <code>mc.zake2002.xyz</code></li>
                     <li>
-                        Bedrock Port: Default <code>19132</code><br>
+                        Bedrock Port: Default <code><a href="minecraft://mc.zake2002.xyz:19132">19132</a></code><br>
                         <em>For Bedrock users, not needed in Java</em>
                     </li>
                 </ul>
