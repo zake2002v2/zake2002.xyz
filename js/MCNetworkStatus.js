@@ -1,34 +1,71 @@
 $(document).ready(() => {
-    const mcnetworkurl = "mcnetwork.zake2002.xyz:19132";   
-    $.getJSON("https://api.mcsrvstat.us/1/" + mcnetworkurl, (network) => {
-        if (network.debug.ping) {
-            if (network.players.max != 0) {
-                $("#network").text(`(${network.players.online}/${network.players.max} on network)`);
-            } else {
-                $("#network").text(`(${network.players.online} on network)`);
-            }
-            $("#networkOffline").hide; //Didn't wanna have to resort to this
-        } else {
-            $("#networkOffline").text("(Network Unavailable)");
-        }
-    });
-});
+    const mcnetworkurl = "mcnetwork.zake2002.xyz:19132";
+    const mcmainserver = "mcserver.zake2002.xyz:29653";
+    const mcservers = [
+        mcmainserver,
+        "pc.zake2002.xyz:29653",
+        "notcobaltdust1351.zake2002.xyz:13510",
+        "hg-gaming.eu:25565"
+    ];
 
-/* This is what I wished could work, but apparently for some reason it can't color from styles.css
+    // Fetch network status
+    $.getJSON(`https://api.mcsrvstat.us/1/${mcnetworkurl}`, (network) => {
+        if (network.debug?.ping) {
+            let connected = network.players?.online || 0;
 
-$(document).ready(() => {
-    const mcnetworkurl = "mcnetwork.zake2002.xyz:19132";   
-    $.getJSON("https://api.mcsrvstat.us/1/" + mcnetworkurl, (network) => {
-        if (network.debug.ping) {
-            if (network.players.max != 0) {
-                $("#network").text(`(${network.players.online}/${network.players.max} on network)`);
-            } else {
-                $("#network").text(`(${network.players.online} on network)`);
-            }
+            // Fetch statuses of all servers
+            const requests = mcservers.map((serverUrl) => {
+                return $.getJSON(`https://api.mcsrvstat.us/1/${serverUrl}`).then((server) => {
+                    if (server.debug?.ping) {
+                        connected += server.players?.online || 0;
+                    }
+                });
+            });
+
+            // Wait for all server requests to complete
+            Promise.all(requests).then(() => {
+                if (network.players?.max != 0) {
+                    $("#network").text(`(${connected}/${network.players?.max} on network)`).addClass("connected");
+                } else {
+                    $("#network").text(`(${connected} on network)`).addClass("connected");
+                }
+            });
         } else {
             $("#network").text("(Network Unavailable)").addClass("offline");
         }
+    }).fail(() => {
+        $("#network").text("(Cannot ping network)").addClass("offline");
+    });
+
+    // Fetch main server status
+    $.getJSON(`https://api.mcsrvstat.us/1/${mcmainserver}`, (mainserver) => {
+        if (mainserver.debug?.ping) {
+            $("#status").text("Online!").addClass("online");
+            if (mainserver.players?.max != 0) {
+                $("#players_num").text(`${mainserver.players?.online}/${mainserver.players?.max} connected`);
+            } else {
+                $("#players_num").text(`${mainserver.players?.online} connected`);
+            }
+        } else {
+            $("#status").text("Offline").addClass("offline");
+
+            // Fetch network details as a fallback for the hub status
+            $.getJSON(`https://api.mcsrvstat.us/1/${mcnetworkurl}`, (network) => {
+                if (network.debug?.ping) {
+                    if (network.players?.max != 0) {
+                        $("#players_num").text(`${network.players?.online}/${network.players?.max} in hub`);
+                    } else {
+                        $("#players_num").text(`${network.players?.online} in hub`);
+                    }
+                } else {
+                    $("#players_num").hide();
+                }
+            }).fail(() => {
+                $("#players_num").hide();
+            });
+        }
+    }).fail(() => {
+        $("#status").text("Error").addClass("offline");
+        $("#players_num").hide();
     });
 });
-
-If anyone out there can read this, please help */

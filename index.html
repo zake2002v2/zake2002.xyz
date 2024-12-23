@@ -6,7 +6,6 @@
     <title>[ Zake2002's Digital Hub ]</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/MCServerStatus.js"></script>
     <script src="js/MCNetworkStatus.js"></script>
 </head>
 <body>
@@ -39,11 +38,7 @@
             <section class="container">
                 <h2>My <span class="green">Minecraft</span> server</h2>
                 <ul class="p-list center-align">
-                    <li>Status: <span id="status">Pinging...</span> <span id="players_num"></span>
-                        <!-- styles.css apparently does not wanna work for #network, or even #networkOffline, so...  -->
-                        <a id="network" style="color: #d49e0b;" href="https://papermc.io/downloads/velocity"><span id="networkOffline" style="color: #cc0000;"></span></a></li>
-                        <!-- This will have to do I guess, unless there's another way to make it actually work -->
-                        <!-- If anyone out there can read this, please help -->
+                    <li>Status: <span id="status"></span> <span id="players_num"></span> <a id="network" href="https://papermc.io/downloads/velocity">(Pinging network...)</a></li>
                     <li>
                         Version: <a href="https://papermc.io/downloads/paper">Paper 1.21.3</a><br>
                         <em>Joinable on Java 1.21.4-1.9.0 + Bedrock Bridge</em>
