@@ -1,10 +1,11 @@
 $(document).ready(() => {
     const mcnetworkurl = "mcnetwork.zake2002.xyz:19132";
-    const mcmainserver = "mcserver.zake2002.xyz:29653";
+    const mcmainserver = "mcnetwork.zake2002.xyz:29653";
     const mcservers = [
         mcmainserver,
         "pc.zake2002.xyz:29653",
-        "notcobaltdust1351.zake2002.xyz:13510",
+        "mcnetwork.zake2002.xyz:13510",
+        "mcnetwork.zake2002.xyz:42069",
         "hg-gaming.eu:25565"
     ];
 
