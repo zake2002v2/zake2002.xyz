@@ -47,7 +47,8 @@ $(document).ready(() => {
                 $("#players_num").text(`${mainserver.players?.online}/${mainserver.players?.max} connected`);
             } else {
                 $("#players_num").text(`${mainserver.players?.online} connected`);
-            }
+            };
+            $("#mcmap").addClass("map");
         } else {
             $("#status").text("Offline").addClass("offline");
 
