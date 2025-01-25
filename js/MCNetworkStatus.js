@@ -7,7 +7,7 @@ $(document).ready(() => {
         "mcnetwork.zake2002.xyz:13510",
         "mcnetwork.zake2002.xyz:32568",
         "mcnetwork.zake2002.xyz:42069",
-        "hg-gaming.eu:25565"
+        "node1.hg-gaming.eu:25565"
     ];
 
     // Fetch network status
