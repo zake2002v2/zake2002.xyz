@@ -3,7 +3,7 @@ $(document).ready(() => {
     const mcmainserver = "mcnetwork.zake2002.xyz:29653";
     const mcservers = [
         mcmainserver,
-        "pc.zake2002.xyz:29653",
+        "pc.zake2002.xyz:54248",
         "mcnetwork.zake2002.xyz:13510",
         "mcnetwork.zake2002.xyz:32568",
         "mcnetwork.zake2002.xyz:42069",
