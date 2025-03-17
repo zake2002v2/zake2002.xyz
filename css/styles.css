@@ -74,7 +74,7 @@ ul {
 }
 
 .green {
-    color: #007e32;
+    color: #00993d;
 }
 
 .green-bright {
@@ -95,7 +95,7 @@ a:hover {
 .container-discord {
     background: #424549;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
     padding-bottom: 10px;
 }
 iframe.discord {
@@ -169,7 +169,7 @@ a.discord:hover {
 /* MC Network status */
 #network {
     font-weight: normal;
-    color: #d49e0b;
+    color: #dfa400;
 }
 #network.connected {
     color: #1e90ff;
@@ -192,4 +192,24 @@ code {
     background-color: #f0f0f0;
     padding: 2px 4px;
     border-radius: 3px;
+}
+
+/* Dark mode toggle */
+a.dark-mode-button {
+    /* Text in button */
+    text-align: center;
+    font-size: 1.3rem;
+    color: #ffffff;
+    /* Actual button */
+    padding: 2px 6px;
+    padding-bottom: 4px;
+    border: 1px;
+    border-radius: 5px;
+    background-color: #808080;
+    border-color: #424549;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+a.dark-mode-button:hover {
+    background-color: #000000;
 }
