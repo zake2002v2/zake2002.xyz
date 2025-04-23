@@ -5,7 +5,7 @@ $(document).ready(() => {
         mcmainserver,
         "pc.zake2002.xyz:54248",
         "mcnetwork.zake2002.xyz:32568",
-        "mcnetwork.zake2002.xyz:42069",
+        "mcnetwork.zake2002.xyz:29656",
         "node1.hg-gaming.eu:25565"
     ];
 
