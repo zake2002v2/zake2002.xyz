@@ -149,23 +149,46 @@ a.discord:hover {
 #status.offline {
     color: #cc0000;
 }
-/* MC Map */
-#mcmap {
-    width: 100%;
-    min-height: 0px;
-    height: 0px;
-    max-height: 370px;
-    content: hide;
+
+/* MC Creative server status */
+#creative_status {
+    font-weight: normal;
+    color: #d49e0b;
 }
-#mcmap.map {
-    border: 3px;
-    border-radius: 10px;
-    zoom: 0.75;
-    min-height: 250px;
-    height: 50vw;
-    content: show;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+#creative_status.online {
+    font-weight: bold;
+    color: #007e32;
 }
+#creative_status.offline {
+    color: #cc0000;
+}
+
+/* MC Legacy server status */
+#legacy_status {
+    font-weight: normal;
+    color: #d49e0b;
+}
+#legacy_status.online {
+    font-weight: bold;
+    color: #007e32;
+}
+#legacy_status.offline {
+    color: #cc0000;
+}
+
+/* MC Original server status */
+#original_status {
+    font-weight: normal;
+    color: #d49e0b;
+}
+#original_status.online {
+    font-weight: bold;
+    color: #007e32;
+}
+#original_status.offline {
+    color: #cc0000;
+}
+
 /* MC Network status */
 #network {
     font-weight: normal;
