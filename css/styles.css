@@ -150,6 +150,23 @@ a.discord:hover {
     color: #cc0000;
 }
 
+/* MC Map */
+#mcmap {
+    width: 100%;
+    min-height: 0px;
+    height: 0px;
+    max-height: 370px;
+    content: hide;
+}
+#mcmap.map {
+    border: 3px;
+    border-radius: 10px;
+    zoom: 0.75;
+    min-height: 250px;
+    height: 50vw;
+    content: show;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 /* MC Creative server status */
 #creative_status {
     font-weight: normal;

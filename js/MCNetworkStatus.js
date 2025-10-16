@@ -18,6 +18,7 @@ $(document).ready(() => {
     // Fetch network status
     $.getJSON(`https://api.mcsrvstat.us/1/${mcnetworkurl}`, (network) => {
         if (network.debug?.ping) {
+            $("#mcmap").addClass("map");
             let connected = network.players?.online || 0;
 
             // Fetch statuses of all servers
@@ -83,11 +84,12 @@ $(document).ready(() => {
         // Fetch original server status
     $.getJSON(`https://api.mcsrvstat.us/1/${mcoriginalserver}`, (originalserver) => {
         if (originalserver.debug?.ping) {
-            $("#original_status").text("Online!").addClass("online");
             if (originalserver.players?.max != 0) {
+                $("#original_status").text("Online!").addClass("online");
                 $("#original_players_num").text(`${originalserver.players?.online}/${originalserver.players?.max} connected`);
             } else {
-                $("#original_players_num").text(`${originalserver.players?.online} connected`);
+                $("#original_status").text("Offline").addClass("offline");
+                $("#original_players_num").hide();
             };
         } else {
             $("#original_status").text("Offline").addClass("offline");
