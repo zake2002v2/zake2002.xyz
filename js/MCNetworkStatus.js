@@ -30,19 +30,46 @@ $(document).ready(() => {
                 });
             });
 
+            // Fetch network details for the hub status
+            if (network.players?.max != 0) {
+                $("#hub_players_num").text(`${network.players?.online}/${network.players?.max} in hub / `);
+            } else {
+                $("#hub_players_num").text(`${network.players?.online} in hub / `);
+            }
+
             // Wait for all server requests to complete
             Promise.all(requests).then(() => {
                 if (network.players?.max != 0) {
-                    $("#network").text(`(${connected}/${network.players?.max} on network)`).addClass("connected");
+                    $("#network").text(`${connected}/${network.players?.max} on network`).addClass("connected");
                 } else {
-                    $("#network").text(`(${connected} on network)`).addClass("connected");
+                    $("#network").text(`${connected} on network`).addClass("connected");
                 }
             });
         } else {
-            $("#network").text("(Network Unavailable)").addClass("offline");
+            $("#network").text("Network Unavailable").addClass("offline");
+            $("#hub_players_num").hide();
         }
     }).fail(() => {
-        $("#network").text("(Cannot ping network)").addClass("offline");
+        $("#network").text("Cannot ping network").addClass("offline");
+        $("#hub_players_num").hide();
+    });
+
+    // Fetch main server status
+    $.getJSON(`https://api.mcsrvstat.us/1/${mcmainserver}`, (mainserver) => {
+        if (mainserver.debug?.ping) {
+            $("#status").text("Online!").addClass("online");
+            if (mainserver.players?.max != 0) {
+                $("#players_num").text(`${mainserver.players?.online}/${mainserver.players?.max} connected`);
+            } else {
+                $("#players_num").text(`${mainserver.players?.online} connected`);
+            };
+        } else {
+            $("#status").text("Offline").addClass("offline");
+            $("#players_num").hide();
+        }
+    }).fail(() => {
+        $("#status").text("Error").addClass("offline");
+        $("#players_num").hide();
     });
 
     // Fetch creative server status
@@ -98,37 +125,5 @@ $(document).ready(() => {
     }).fail(() => {
         $("#original_status").text("Error").addClass("offline");
         $("#original_players_num").hide();
-    });
-
-    // Fetch main server status
-    $.getJSON(`https://api.mcsrvstat.us/1/${mcmainserver}`, (mainserver) => {
-        if (mainserver.debug?.ping) {
-            $("#status").text("Online!").addClass("online");
-            if (mainserver.players?.max != 0) {
-                $("#players_num").text(`${mainserver.players?.online}/${mainserver.players?.max} connected`);
-            } else {
-                $("#players_num").text(`${mainserver.players?.online} connected`);
-            };
-        } else {
-            $("#status").text("Offline").addClass("offline");
-
-            // Fetch network details as a fallback for the hub status
-            $.getJSON(`https://api.mcsrvstat.us/1/${mcnetworkurl}`, (network) => {
-                if (network.debug?.ping) {
-                    if (network.players?.max != 0) {
-                        $("#players_num").text(`${network.players?.online}/${network.players?.max} in hub`);
-                    } else {
-                        $("#players_num").text(`${network.players?.online} in hub`);
-                    }
-                } else {
-                    $("#players_num").hide();
-                }
-            }).fail(() => {
-                $("#players_num").hide();
-            });
-        }
-    }).fail(() => {
-        $("#status").text("Error").addClass("offline");
-        $("#players_num").hide();
     });
 });

@@ -131,6 +131,7 @@ a.discord:hover {
 .container-mc {
     background: #ffffff;
     padding-top: 20px;
+    padding-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     padding-left: 30px;
@@ -157,6 +158,8 @@ a.discord:hover {
     height: 0px;
     max-height: 370px;
     content: hide;
+    display: none;
+
 }
 #mcmap.map {
     border: 3px;
@@ -165,6 +168,7 @@ a.discord:hover {
     min-height: 250px;
     height: 50vw;
     content: show;
+    display: block;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 /* MC Creative server status */
@@ -213,17 +217,18 @@ a.discord:hover {
 }
 #network.connected {
     color: #1e90ff;
-    transition: color 0.3s ease;
-}
-#network.connected:hover {
-    color: #003366;
 }
 #network.offline {
     color: #850000;
+}
+
+a.mcnet {
+    color: #32cd32;
     transition: color 0.3s ease;
 }
-#network.offline:hover {
-    color: #640000;
+
+a.mcnet:hover {
+    color: #01a584;
 }
 
 /* Code block styling */
