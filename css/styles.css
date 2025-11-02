@@ -258,3 +258,23 @@ a.dark-mode-button {
 a.dark-mode-button:hover {
     background-color: #000000;
 }
+
+/* Dark mode toggle */
+a.new-site-button {
+    /* Text in button */
+    text-align: center;
+    font-size: 1.3rem;
+    color: #003e14;
+    /* Actual button */
+    padding: 2px 6px;
+    padding-bottom: 4px;
+    border: 1px;
+    border-radius: 5px;
+    background-color: #00c140;
+    border-color: #78e2bb;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+a.new-site-button:hover {
+    background-color: #00b599;
+}
