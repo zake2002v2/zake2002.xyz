@@ -13,7 +13,8 @@ $(document).ready(() => {
         "mcnetwork.zake2002.xyz:32568",
         "504768.blockworlds.io:25566",
         "node1.hg-gaming.eu:25565",
-        "post-banners.gl.at.ply.gg:59559"
+        "post-banners.gl.at.ply.gg:59559",
+        "PhoenixHeartalicorn.aternos.me:27597"
     ];
 
     // Fetch network status
