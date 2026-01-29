@@ -9,12 +9,11 @@ $(document).ready(() => {
         mccreativeserver,
         mclegacyserver,
         mcoriginalserver,
-        "pc.zake2002.xyz:54248",
-        "mcnetwork.zake2002.xyz:32568",
-        "504768.blockworlds.io:25566",
-        "node1.hg-gaming.eu:25565",
-        "post-banners.gl.at.ply.gg:59559",
-        "PhoenixHeartalicorn.aternos.me:27597"
+        "pc.zake2002.xyz:54248", //Zake2002-Computer
+        "mcnetwork.zake2002.xyz:32568", //SiegeCraft
+        "node1.hg-gaming.eu:25565", //HellsGate-gaming
+        "post-banners.gl.at.ply.gg:59559", //SnailCraft
+        "PhoenixHeartalicorn.aternos.me:27597" //PhoenixHeart-Server
     ];
 
     // Fetch network status
