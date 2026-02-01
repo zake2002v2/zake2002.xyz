@@ -10,6 +10,7 @@ $(document).ready(() => {
         mclegacyserver,
         mcoriginalserver,
         "pc.zake2002.xyz:54248", //Zake2002-Computer
+        "a5.kyttuslab.org:25565" //Kyttus-Lab
         "mcnetwork.zake2002.xyz:32568", //SiegeCraft
         "node1.hg-gaming.eu:25565", //HellsGate-gaming
         "post-banners.gl.at.ply.gg:59559", //SnailCraft
