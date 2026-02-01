@@ -3,7 +3,7 @@ $(document).ready(() => {
     const mcmainserver = "mcnetwork.zake2002.xyz:22002";
     const mccreativeserver = "mcnetwork.zake2002.xyz:29656";
     const mclegacyserver = "mcnetwork.zake2002.xyz:29653";
-    const mcoriginalserver = "zxcorporiginalserver.falixsrv.me:65478";
+    const mcoriginalserver = "zxcorporiginalserver.falixsrv.me:22390";
 
     // Fetch network status for MCMap
     $.getJSON(`https://api.mcsrvstat.us/1/${mcnetworkurl}`, (network) => {

@@ -4,7 +4,7 @@ $(document).ready(() => {
         "mcnetwork.zake2002.xyz:22002", //Zake2002-Server
         "mcnetwork.zake2002.xyz:29656", //Creative
         "mcnetwork.zake2002.xyz:29653", //Zake2002-Legacy
-        "zxcorporiginalserver.falixsrv.me:65478", //Zake2002-Original
+        "zxcorporiginalserver.falixsrv.me:22390", //Zake2002-Original
         "pc.zake2002.xyz:54248", //Zake2002-Computer
         "a5.kyttuslab.org:25565", //Kyttus-Lab
         "mcnetwork.zake2002.xyz:32568", //SiegeCraft
