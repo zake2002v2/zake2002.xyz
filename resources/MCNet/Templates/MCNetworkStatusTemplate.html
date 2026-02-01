@@ -1,0 +1,93 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* General body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            display: flex;
+            justify-content: right;
+        }
+
+        h2 {
+            text-align: right;
+            font-size: 1.3rem;
+            margin: 0.5rem;
+        }
+
+        ul {
+            padding-left: 1rem;
+        }
+
+        /* List and link styling */
+        .p-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .center-align {
+            text-align: right;
+        }
+
+        a {
+            color: #1e90ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #003366;
+        }
+
+        /* MC Server status */
+        #status {
+            font-weight: normal;
+            color: #d49e0b;
+        }
+        #status.online {
+            font-weight: bold;
+            color: #007e32;
+        }
+        #status.offline {
+            color: #cc0000;
+        }
+
+        /* MC Network status */
+        #network {
+            font-weight: normal;
+            color: #dfa400;
+        }
+        #network.connected {
+            color: #1e90ff;
+        }
+        #network.offline {
+            color: #850000;
+        }
+
+        /* Code block styling */
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://zake2002.xyz/js/MCNetworkStatus.js"></script>
+    <script src="./MCStatusTemplate.js"></script>
+</head>
+    <body>
+        <!-- Main container for independent columns -->
+        <ul class="p-list center-align">
+            <li><b>Network Router:</b> <span id="hub_players_num"></span><a id="network"><span>Pinging network...</span><noscript style="color: red;">cannot ping, please enable scripts</noscript></a><br>
+                <b>Main Server:</b> <span id="status"><span>Pinging...</span><noscript style="color: red;">cannot ping, please enable scripts</noscript></span> <span id="players_num"></span>
+            </li>
+        </ul>
+    </body>
+</html>
