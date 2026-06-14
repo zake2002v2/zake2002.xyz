@@ -5,7 +5,7 @@ $(document).ready(() => {
         "mcnetwork.zake2002.xyz:29656", //Creative
         "mcnetwork.zake2002.xyz:29653", //Zake2002-Legacy
         "zxcorporiginalserver.falixsrv.me:22106", //Zake2002-Original
-        "pc.zake2002.xyz:19132", //Zake2002-Computer
+        "pc.zake2002.xyz:22002", //Zake2002-Computer
         "a5.kyttuslab.org:25565", //Kyttus-Lab
         "mcnetwork.zake2002.xyz:32568", //SiegeCraft
         "node1.hg-gaming.eu:25565", //HellsGate-gaming
