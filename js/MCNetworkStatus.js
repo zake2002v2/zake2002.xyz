@@ -10,7 +10,7 @@ $(document).ready(() => {
         "mcnetwork.zake2002.xyz:32568", //SiegeCraft
         "node1.hg-gaming.eu:25565", //HellsGate-gaming
         "post-banners.gl.at.ply.gg:59559", //SnailCraft
-        "PhoenixHeartalicorn.aternos.me:27597" //PhoenixHeart-Server
+        "PhoenixHeartalicorn.zake2002.xyz:41996" //PhoenixHeart-Server
     ];
 
     // Fetch network status
